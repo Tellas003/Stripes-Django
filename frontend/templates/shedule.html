@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripes Academy</title>
+    <LINK REL="SHORTCUT ICON" HREF="static/assets/images/StripesLogo.svg">
+    <meta name="author" content="A Maria Tellas Bsc.,MCA">
+
+    <link rel="stylesheet" href="static/assets/about-style.css">
+    <link rel="stylesheet" href="static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/css/bootstrap-reboot.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <!--Navbar start-->
+
+    {%include 'navbar.html'%}
+
+    <!--navbar end-->
+    <style>
+        .background-image {
+            background-image: url('static/assets/images/scorpio.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            height: 100%;
+            position: relative;
+            margin-top: -120px;
+
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+        }
+
+        .content {
+            flex: 1;
+            position: sticky;
+            color: #333;
+            text-align: center;
+            font-size: 16px;
+            padding: 20px;
+        }
+
+        h2 {
+            font-weight: bold;
+        }
+
+        #con {
+
+            top: 400px;
+            margin-top: 20px;
+            border-radius: 10px;
+        /* Updated background color to a professional shade of powder blue */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+animation-name: moveInBox;
+animation-duration: 1s;
+animation-timing-function: ease-in-out;
+}
+@keyframes moveInBox {
+from {
+transform: translateY(-100%);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+    }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                padding: 10px;
+            }
+
+            #con {
+                margin-top: 20px;
+            }
+
+            .col-lg-8 {
+                margin-top: 20px;
+            }
+        }
+
+
+
+        body {
+            margin-top: 20px;
+        }
+
+        .schedule-table table thead tr {
+            background: #031163;
+        }
+
+        .schedule-table table thead th {
+            background-color: #031163;
+            padding: 25px 20px;
+            color: #fff;
+            text-align: center;
+            font-size: 18px;
+            font-weight: 800;
+            position: relative;
+            border: 0;
+        }
+
+        .schedule-table table thead th:before {
+            content: "";
+            width: 3px;
+            height: 35px;
+            background: rgba(255, 255, 255, 0.2);
+            position: absolute;
+            right: -1px;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .schedule-table table thead th.last:before {
+            content: none;
+        }
+
+        .schedule-table table tbody td {
+            vertical-align: middle;
+            border: 1px solid #e2edf8;
+            font-weight: 500;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .schedule-table table tbody td.day {
+            font-size: 18px;
+            font-weight: 600;
+            background: #f0f1f3;
+            border: 1px solid #e4e4e4;
+            position: relative;
+            transition: all 0.3s linear 0s;
+            min-width: 75px;
+        }
+
+        .schedule-table table tbody td.active {
+            position: relative;
+
+            z-index: 10;
+            transition: all 0.3s linear 0s;
+            min-width: 95px;
+        }
+
+        .schedule-table table tbody td.active h4 {
+            font-weight: 700;
+            color: #000;
+            font-size: 18px;
+            margin-bottom: 5px;
+        }
+
+        .schedule-table table tbody td.active p {
+            font-size: 16px;
+            line-height: normal;
+            margin-bottom: 0;
+        }
+
+        .schedule-table table tbody td .hover h4 {
+            font-weight: 700;
+            font-size: 18px;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        .schedule-table table tbody td .hover p {
+            font-size: 16px;
+            margin-bottom: 5px;
+            color: #ffffff;
+            line-height: normal;
+        }
+
+        .schedule-table table tbody td .hover span {
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .schedule-table table tbody td.active::before {
+            position: absolute;
+            content: "";
+            min-width: 100%;
+            min-height: 100%;
+            transform: scale(0);
+            top: 0;
+            left: 0;
+            z-index: -1;
+            border-radius: 0.25rem;
+            transition: all 0.3s linear 0s;
+        }
+
+        .schedule-table table tbody td .hover {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            width: 120%;
+            height: 120%;
+            transform: translate(-50%, -50%) scale(0.8);
+            z-index: 99;
+            background: #1f5dea;
+            border-radius: 0.25rem;
+            padding: 25px 0;
+            visibility: hidden;
+            opacity: 0;
+            transition: all 0.3s linear 0s;
+        }
+
+        .schedule-table table tbody td.active:hover .hover {
+            transform: translate(-50%, -50%) scale(1);
+            visibility: visible;
+            opacity: 1;
+        }
+
+        /*.schedule-table table tbody td.day:hover {
+            background: #1f5dea;
+            color: #fff;
+            border: 1px solid #1f5dea;
+      }*/
+        @media screen and (max-width: 991px) {
+            .schedule-table table thead th {
+                font-size: 14px;
+                padding: 15px;
+            }
+
+            .schedule-table table tbody td.day {
+                font-size: 14px;
+            }
+
+            .schedule-table table tbody td.active h4 {
+                font-size: 14px;
+            }
+        }
+
+        @media screen and (max-width: 767px) {
+            .schedule-table table thead th {
+                padding: 3px;
+            }
+
+            .schedule-table table tbody td {
+                padding: 10px;
+            }
+
+            .schedule-table table tbody td.active h4 {
+                font-size: 14px;
+            }
+
+            .schedule-table table tbody td.active p {
+                font-size: 12px;
+            }
+
+            .schedule-table table tbody td .hover {
+                padding: 08px 0;
+            }
+
+            .schedule-table table tbody td.day {
+                font-size: 14px;
+            }
+
+            .schedule-table table tbody td .hover span {
+                font-size: 12px;
+            }
+        }
+
+        @media screen and (max-width: 490px) {
+            .schedule-table table tbody td.active h4 {
+                font-size: 10px;
+            }
+
+            .schedule-table table tbody td.active p {
+                font-size: 08px;
+            }
+
+            .schedule-table table tbody td .hover {
+                padding: 08px 0;
+            }
+
+            .schedule-table table tbody td.day {
+                font-size: 10px;
+            }
+
+            .schedule-table table tbody td .hover span {
+                font-size: 1px;
+            }
+        }
+    </style>
+    </head>
+
+    <body>
+        <style>
+            .container {
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+
+            .buttons {
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            .month-btn {
+                padding: 10px 20px;
+                margin: 0 10px;
+                background-color: #007bff;
+                color: #fff;
+                font-weight: bold;
+                border: none;
+                border-radius: 5px;
+                cursor: pointer;
+            }
+
+            .month-btn:hover {
+                background-color: #ccc;
+                color: #031163;
+            }
+
+            .month-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin-top: 20px;
+            }
+
+            .month-table th,
+            .month-table td {
+                padding: 10px;
+                border: 1px solid #ccc;
+                text-align: center;
+            }
+
+            .table-container {
+                overflow-x: auto;
+            }
+
+            @media screen and (max-width: 767px) {
+                .month-btn {
+                    padding: 10px 20px;
+                    margin: 0 10px;
+                    background-color: #007bff;
+                    color: #fff;
+                    font-weight: bold;
+                    font-size: 10px;
+                    border: none;
+                    border-radius: 5px;
+                    cursor: pointer;
+                }
+
+            }
+        </style>
+
+        <!-- about section starts -->
+
+        <div>
+            <div class="background-image">
+                <div class="overlay"></div>
+                <div class="content">
+                    <section id="about" class="about section-padding">
+
+                        <div class="container">
+                            <div class="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center">
+
+                            </div>
+                            <div class="row" id="con" style=" margin-top:100px;">
+                                <div class="col-md-12">
+                                    <div class="schedule-table">
+                                        <table class="table ">
+                                            <thead>
+                                                <tr>
+
+                                                    <th>Month</th>
+                                                    <div class="buttons">
+
+                                                        <th><button class="month-btn"
+                                                                onclick="showTable('January')">January</button></th>
+                                                        <th> <button class="month-btn"
+                                                                onclick="showTable('February')">February</button></th>
+                                                        <th> <button class="month-btn"
+                                                                onclick="showTable('March')">March</button></th>
+                                                    </div>
+                                                </tr>
+
+
+                                                <div class="table-container">
+
+                                                    <table id="january-table" class="month-table">
+
+                                                        <div
+                                                            class="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center">
+
+                                                        </div>
+
+                                                        <thead>
+                                                            <tr>
+                                                                <th>January</th>
+                                                                <th colspan="2">Name Of The Course</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="day">Week 1<br>3rd to 9th</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>3rd to 9th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>EEAC</h4>
+
+                                                                    <p>Location: Online</p>
+                                                                    <div class="hover">
+                                                                        <h4>EEAC</h4>
+                                                                        <p>3rd to 9th</p>
+                                                                        <p>Location: Online</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="day">Week 2<br>12th to 18th</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>12th to 18th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>FRAMO</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>FRAMO</h4>
+                                                                        <p>12th to 18th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="day">Week 3<br>15th to 21st</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>15th to 21st</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>ECME</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>ECME</h4>
+                                                                        <p>15th to 21st</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                            </tr>
+
+
+
+                                                            <tr>
+                                                                <td class="day">Week 4<br>22th to 28th
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>BWTS</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BWTS</h4>
+                                                                        <p>22nd to 24th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>BTM-External</h4>
+
+                                                                    <p>Location:Istanbul</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTM-External</h4>
+                                                                        <p>22nd to 26th</p>
+                                                                        <p>Location:Istanbul</p>
+
+                                                                    </div>
+                                                            </tr>
+
+                                                            <tr>
+                                                                <td class="day">Week 5<br>29th to 2nd(Feb)
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>29th to 2nd(Feb)</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>ECME</h4>
+
+                                                                    <p>Location: Istanbul</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTM-External</h4>
+                                                                        <p>30th to 2nd(Feb)</p>
+                                                                        <p>Location: Zenith, Istanbul</p>
+
+                                                                    </div>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+
+
+                                                    <!-- Add tables for February with the same structure -->
+
+
+                                                    <table id="february-table" class="month-table">
+                                                        <div
+                                                            class="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center">
+
+                                                        </div>
+
+                                                        <thead>
+                                                            <tr>
+                                                                <th>February</th>
+                                                                <th colspan="2">Name Of The Course</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="day">Week 1<br>5th to 11th</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>5th to 9th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>EEAC</h4>
+
+                                                                    <p>Location: Online</p>
+                                                                    <div class="hover">
+                                                                        <h4>EEAC</h4>
+                                                                        <p>5th to 9th</p>
+                                                                        <p>Location: Online</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="day">Week 2<br>12th to 18th</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location:Zenith, Istanpul</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>12th to 16th</p>
+                                                                        <p>Location:Zenith, Istanpul</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>FRAMO</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>FRAMO</h4>
+                                                                        <p>12th to 14th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="day">Week 3<br>19th to 25th</td>
+                                                                <td class="active">
+                                                                    <h4>BWTS</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BWTS</h4>
+                                                                        <p>20th to 22nd</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>EEAC</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>ECME</h4>
+                                                                        <p>19th to 24th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                            </tr>
+
+
+
+                                                            <tr>
+                                                                <td class="day">Week 4<br>26th to 3rd(March)</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>26th to 1st(March)</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td></td>
+
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <!-- Add tables for March with the same structure -->
+                                                    <table id="march-table" class="month-table">
+                                                        <div
+                                                            class="w-95 w-md-75 w-lg-60 w-xl-55 mx-auto mb-6 text-center">
+
+                                                        </div>
+
+                                                        <thead>
+                                                            <tr>
+                                                                <th>March</th>
+                                                                <th colspan="3">Name Of The Course</th>
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="day">Week 1<br>4th to 8th</td>
+                                                                <td class="active">
+                                                                    <h4>ECME</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>ECME</h4>
+                                                                        <p>4th to 7th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>SCALE</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>SCALE</h4>
+                                                                        <p>4th to 6th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>ECDIS,RADAR & COLREGS</h4>
+
+                                                                    <p>Location: Online</p>
+                                                                    <div class="hover">
+                                                                        <h4>ECDIS,RADAR & COLREGS</h4>
+                                                                        <p>7th to 8th</p>
+                                                                        <p>Location: Online</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="day">Week 2<br>11th to 17th</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>11th to 15th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td></td>
+                                                                <td></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td class="day">Week 3<br>18th to 23rd</td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB</h4>
+                                                                        <p>18th to 22nd</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>Engine Auxiliaries</h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>Engine Auxiliaries</h4>
+                                                                        <p>20th to 23rd</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+
+
+                                                            <tr>
+                                                                <td class="day">Week 4<br>25th to 31st
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>BTRM-RBB </h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTRM-RBB </h4>
+                                                                        <p>25th to 29th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                                <td class="active">
+                                                                    <h4>FRAMO </h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BTM-External</h4>
+                                                                        <p>25th to 27th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+
+                                                                <td class="active">
+                                                                    <h4>BWTS </h4>
+
+                                                                    <p>Location: Mumbai</p>
+                                                                    <div class="hover">
+                                                                        <h4>BWTS </h4>
+                                                                        <p>27th to 29th</p>
+                                                                        <p>Location: Mumbai</p>
+
+                                                                    </div>
+                                                                </td>
+                                                            </tr>
+
+
+                                                        </tbody>
+                                                    </table>
+                                                    <br><br><br><br><br><br>
+                                                </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+                </section>
+
+
+
+
+
+
+
+                <script>
+                    function showTable(month) {
+                        // Hide all tables
+                        const tables = document.querySelectorAll('.month-table');
+                        tables.forEach(table => {
+                            table.style.display = 'none';
+                        });
+
+                        // Show the table for the selected month
+                        const selectedTable = document.getElementById(`${month.toLowerCase()}-table`);
+                        selectedTable.style.display = 'table';
+                    }
+
+                    // Show January table by default
+                    showTable('January');
+
+                </script>
+
+                <!-- about section Ends -->
+                <!-- FOOTER -->
+
+                {%include 'footer.html'%}
+
+                <!-- Footer End -->
+
+                <script src="static/assets/js/bootstrap.min.js"></script>
+                <script src="static/assets/js/bootstrap.bundle.min.js"></script>
+                <script src="static/assets/js/swiper-bundle.min.js"></script>
+
+
+
+    </body>
+
+</html>

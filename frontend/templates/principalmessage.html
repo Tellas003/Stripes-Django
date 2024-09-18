@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripes Academy</title>
+  <LINK REL="SHORTCUT ICON" HREF="static/assets/images/StripesLogo.svg">
+  <meta name="author" content="A Maria Tellas Bsc.,MCA">
+
+  <link rel="stylesheet" href="static/assets/about-style.css">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/bootstrap-reboot.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!--Navbar start-->
+
+  {%include 'navbar.html'%}
+
+  <!--navbar end-->
+  <style>
+    .background-image {
+      background-image: url('static/assets/images/scorpio.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      position: relative;
+      margin-top: -120px;
+
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+    }
+
+    .content {
+      flex: 1;
+      position: sticky;
+      color: #333;
+      text-align: center;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+
+    #con {
+
+      top: 400px;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin-top: 20px;
+      border-radius: 10px;
+   /* Updated background color to a professional shade of powder blue */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+animation-name: moveInBox;
+animation-duration: 1s;
+animation-timing-function: ease-in-out;
+}
+@keyframes moveInBox {
+from {
+transform: translateY(-100%);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .top {
+      margin-top: -110px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 10px;
+      }
+
+      #con {
+        margin-top: 20px;
+      }
+
+      .col-lg-8 {
+        margin-top: 20px;
+
+      }
+
+      #top {
+        margin-top: 50px;
+      }
+    }
+
+    @media (max-width: 991px) {
+      .top {
+        margin-top: -50px;
+      }
+
+      .about-text {
+        margin-top: 1px;
+      }
+
+      #to {
+        margin-top: 50px;
+      }
+    }
+
+    @media (max-width: 1399px) {
+      .top {
+        margin-top: -50px;
+      }
+    }
+  </style>
+  <!-- about section starts -->
+
+  <div>
+    <div class="background-image">
+      <div class="overlay"></div>
+      <div class="content">
+        <section id="about" class="about section-padding">
+
+          <div class="container">
+            <h2 style="color:#12294D ; font-size:40px; font-weight:bold; margin-top:250px;">Principal's Message <br />
+            </h2><br>
+            <div class="row" id="con" style=" margin-top:30px;">
+              <div class="col-lg-4 col-md-12 col-12">
+                <div class="assets/about-img" id="to">
+
+                  <img src="static/assets/images/vincent.jpeg" alt="" class="img-fluid" id="im">
+                  <div style="margin-top:-120px;font-weight:bold">
+                    <p>Capt.Vincent Fernandes <br>
+                      Principal & Director</p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+                <div class="about-text">
+
+                  <p align="left"> As we reflect on the remarkable journey of the past 8 months since the inception of
+                    Stripes, our commitment to delivering excellence in maritime training has never been stronger. It's
+                    truly awe-inspiring to witness how our academy has flourished, and I've come to realize that the
+                    backbone of our success lies not in the physical infrastructure, but in the dedication and passion
+                    of our incredible team.
+                    <br><br>Behind every successful training session, there is a symphony of efforts, from maintaining
+                    our pristine campus to ensuring our students are properly cared for. From the course registration to
+                    collecting feedback, each aspect of our operation is meticulously crafted with our people at the
+                    forefront.
+                    <br><br>With immense pride, I share that we have already provided training to over 750 seafarers.
+                    The unwavering love and encouragement we receive from our students continue to fuel our drive and
+                    inspire us to reach greater heights.
+                  </p>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-12 col-12"></div>
+              <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5" id="top">
+                <p align=left class="top">As we set sail into the 2nd quarter of 2024, brimming with anticipation and
+                  excitement, I am thrilled to announce that Stripes will soon expand its horizons internationally. In
+                  just 8 months, we've achieved remarkable milestones, but our journey has only just begun. We remain
+                  steadfast in our commitment to excellence, embracing each new challenge with the same fervor and
+                  enthusiasm that ignited our journey on day one.
+                  <br><br>I extend heartfelt gratitude to our esteemed training partners—Scorpio, Zenith, Optimum, Torm,
+                  Valles, MMSI, and Pacific Basin—for their unwavering support and trust in our vision. Together, we
+                  continue to chart new waters and redefine maritime education.
+                  <br><br>As we continue to grow and evolve, I am confident that our students will emerge as our most
+                  steadfast ambassadors, proudly carrying the flag of Stripes across the seas.
+                  <br><br>Here's to the countless adventures that lie ahead, and to the enduring spirit of excellence
+                  that illuminates our path.
+                </p>
+              </div>
+
+              <br><br><br><br><br><br><br>
+              <!--<a href="#" class="btn btn-warning">Learn More</a>-->
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+  </section>
+  </div>
+  </div>
+  </div><br><br>
+  <!-- about section Ends -->
+  <!-- FOOTER -->
+
+  {%include 'footer.html'%}
+
+  <!-- Footer End -->
+
+  <script src="static/assets/js/bootstrap.min.js"></script>
+  <script src="static/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/js/swiper-bundle.min.js"></script>
+
+
+
+</body>
+
+</html>

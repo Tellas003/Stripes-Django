@@ -1,0 +1,184 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stripes Academy</title><LINK REL="SHORTCUT ICON"  HREF="static/assets/images/StripesLogo.svg">
+      <meta name="author" content="A Maria Tellas Bsc.,MCA">
+
+    <!--Add Bootstrap css-->
+    
+    <link rel="stylesheet" href="static/assets/style.css">
+    <link rel="stylesheet" href="static/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="static/assets/css/bootstrap-reboot.css">
+      <!--The facuty swiper css-->
+      <link rel="stylesheet" href="static/css/swiper-bundle.min.css">
+   
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+    
+        /* Navbar Styles */
+        .navbar-nav .nav-link {
+            color: #171616;
+            font-weight: 700;
+        }
+
+        .navbar-nav .nav-link:hover {
+            color: #F3E5C4; /* Change the color on hover */
+             /* Background color on hover */
+        }
+
+        
+
+        .dropdown-menu .dropdown-item {
+            color: #1A0C4E; /* Text color of dropdown items */
+            background-color:#fff;
+            
+        }
+
+        .dropdown-menu .dropdown-item:hover {
+            background-color: #F3E5C4; /* Background color on hover */
+            color:black;
+        }
+        .dropdown-menu li {
+position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+display: none;
+position: absolute;
+left: 100%;
+top: -7px;
+}
+.dropdown-menu .dropdown-submenu-left {
+right: 100%;
+left: auto;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+display: block;
+}
+         @media (max-width: 991px) {
+          .navbar-nav .nav-link:hover {
+            color:#007bff;/* Change the color on hover */
+             /* Background color on hover */
+        }
+        .dropdown-menu .dropdown-item {
+            font-size:13px;
+            
+        }
+         }
+    </style>
+</head>
+<body>
+    <!--Navbar start-->
+    
+    <nav class="navbar navbar-expand-lg fixed-top"id="navbar" 
+    style ="display: grid;justify-content: center;">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="http://127.0.0.1:8000/"><img src="static/assets/images/StripesLogo.svg" height="200px" width="200px" alt="" class="img-fluid"></a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel" style="background-color:#e6e4e2;">
+            <div class="offcanvas-header">
+               <h5 class="offcanvas-title" id="offcanvasNavbarLabel"><a href="{% url 'home' %}"><img src="static/assets/images/StripesLogo.svg" height="130px" width="130px" alt="" class="img-fluid"></a></h5>
+              <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+              <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                
+               
+                <li class="nav-item dropdown">
+                  <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    About Us
+                  </a>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="about">Stripes Academy</a></li>
+                    <li><a class="dropdown-item" href="principalmessage">Principal's Desk</a></li>
+                    <li><a class="dropdown-item" href="feedback">Student's Speak</a></li>
+                   <!-- <li><a class="dropdown-item" href="team.php">Our Team</a></li>-->
+                  </ul>
+                </li>  
+                 <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Courses
+                    </a>
+                    <ul class="dropdown-menu">
+                     <li><a class="dropdown-item" href="Course_Shedule">Three Month Course Schedule</a></li>
+                    <li>&nbsp &nbsp----------------------------------------------------------------------&nbsp &nbsp</li>           
+        <li><a class="dropdown-item" href="course_1">The Role-Based Bridge</a></li>
+        <li><a class="dropdown-item" href="course_2">Ship Simulator and Bridge Teamwork</a></li>
+        <li><a class="dropdown-item" href="course_3">Shipmasters Command and Leadership Evaluvation</a></li>
+        <li><a class="dropdown-item" href="course_4">Bridge Watchkeeping for Junior Officers</a></li>
+        <li><a class="dropdown-item" href="course_5">Bridge Watchkeeping for Ratings</a></li>
+        <li><a class="dropdown-item" href="course_6">Ship-Ship Transfer Navigational Training</a></li>
+        <li><a class="dropdown-item" href="course_7">Large Vessel Manoeuvring</a></li>
+        <li><a class="dropdown-item" href="course_8">Framo Pump Operations and Maintenance</a></li>
+        <li><a class="dropdown-item" href="course_9">Electrical, Electronics, and Automation Course</a></li>
+        <li><a class="dropdown-item" href="course_10">Ballast Water Treatment Systems</a></li>
+        <li><a class="dropdown-item" href="course_11">Marine Hydraulics Training</a></li>
+        <li><a class="dropdown-item" href="course_12">Pneumatics Training</a></li>
+        <li><a class="dropdown-item" href="course_13">Safety Training for Ratings</a></li>
+    
+</ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2"  href="gallery">Gallery</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link mx-lg-2"  href="contact">Contact</a>
+                  </li>
+                  <li class="nav-item ">
+                    <a class="nav-link mx-lg-2" href="search">
+                      Certificate Authenticator
+                    </a>
+                  
+                  </li>
+                <!--  <li class="nav-item dropdown">
+                    <a class="nav-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"style="color: #171616;font-weight: 700">
+                      Tools
+
+                    </a>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Action</a></li>
+                      <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li></li>
+                      <li><a class="dropdown-item" href="#">Something else here</a></li>
+                    </ul>
+                  </li>-->
+                 
+               
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+      </nav>
+      
+    </script>
+    
+      
+    
+      <script>
+      window.addEventListener("scroll", function () {
+    var navbar = document.querySelector(".navbar");
+    if (window.scrollY > 0) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+      </script>
+      
+      <!--navbar end-->
+      <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!--Bootstrap Script Source-->
+    <script src="static/assets/js/bootstrap.min.js"></script>
+    <script src="static/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="static/assets/js/swiper-bundle.min.js"></script>
+    
+    
+    
+</body>
+</html>

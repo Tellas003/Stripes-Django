@@ -1,0 +1,73 @@
+
+{% include './includes/header.html' %}
+{% include './includes/navbar.html' %}
+
+
+{% block content %}
+<div class="container-fluid">
+    <!-- DataTales Example -->
+    <div class="card shadow mb-4">
+        <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">Students Profile &nbsp &nbsp
+               
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#addadminprofile">
+                        Add New Students Profile 
+                    </button>
+                </a>
+            </h6>
+        </div>
+
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th> S.No </th>
+                            <th> Course Name </th>
+                            <th> Certificate No</th>
+                            <th>Student Name </th>
+                            <th>Seaman Book / passport No</th>
+                            <th> Couse Start Date</th>
+                            <th> Course End Date </th>
+                            <th> Certificate Issue Date </th>
+                           <th> Edit</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody id="student_table_body">
+                        {% for student in students %}
+                        <tr>
+                            <td>{{ forloop.counter }}</td>
+                            <td>{{ student.courseName }}</td>
+                            <td>{{ student.certificateNo }}</td>
+                            <td>{{ student.participantName }}</td>
+                            <td>{{ student.passportNo }}</td>
+                            <td>{{ student.courseDate1}}</td>
+                            <td>{{ student.courseDate2 }}</td>
+                            <td>{{ student.issueDate }}</td>
+                            <td>
+                                <button type="button" class="btn btn-success edit_btn" data-id="{{ student.Certificatenumber }}">EDIT</button>
+                            </td>
+                            <td>
+                                <button type="button" class="btn btn-danger delete_btn" data-id="{{ student.Certificatenumber }}">DELETE</button>
+                            </td>
+                        </tr>
+                       
+                        
+                        {% empty %}
+                        <tr><td colspan="8">No records found</td></tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="edit_modal_content" style="display:none;"></div>
+<div id="delete_modal_content" style="display:none;"></div>
+
+{% endblock %}
+<!-- Include necessary scripts -->
+
+

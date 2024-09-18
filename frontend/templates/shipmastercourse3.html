@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripes Academy</title>
+  <LINK REL="SHORTCUT ICON" HREF="static/assets/images/StripesLogo.svg">
+  <meta name="author" content="A Maria Tellas Bsc.,MCA">
+
+  <link rel="stylesheet" href="static/assets/about-style.css">
+  <link rel="stylesheet" href="static/css/bootstrap.min.css">
+  <link rel="stylesheet" href="static/css/bootstrap-reboot.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!--Navbar start-->
+
+  {%include 'navbar.html'%}
+  <!--navbar end-->
+  <style>
+    .background-image {
+      background-image: url('static/assets/images/scorpio.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      position: relative;
+      margin-top: -120px;
+
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+    }
+
+    .content {
+      flex: 1;
+      position: sticky;
+      color: #333;
+      text-align: center;
+      font-size: 16px;
+      padding: 20px;
+    }
+
+    h2 {
+      font-weight: bold;
+    }
+
+    #con {
+
+      top: 400px;
+      background-color: rgba(255, 255, 255, 0.5);
+      margin-top: 20px;
+      border-radius: 10px;
+   /* Updated background color to a professional shade of powder blue */
+box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+animation-name: moveInBox;
+animation-duration: 1s;
+animation-timing-function: ease-in-out;
+}
+@keyframes moveInBox {
+from {
+transform: translateY(-100%);
+opacity: 0;
+}
+to {
+transform: translateY(0);
+opacity: 1;
+}
+    }
+
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        padding: 10px;
+      }
+
+      #con {
+        margin-top: 20px;
+      }
+
+      .col-lg-8 {
+        margin-top: 20px;
+      }
+    }
+  </style>
+  <!-- about section starts -->
+
+  <div>
+    <div class="background-image">
+      <div class="overlay"></div>
+      <div class="content">
+        <section id="about" class="about section-padding">
+
+          <div class="container">
+            <div class="row" id="con" style=" margin-top:300px;">
+              <div class="col-lg-4 col-md-12 col-12">
+                <div class="assets/about-img">
+                  <img src="static/assets/images/bridgecourse4.png" alt="" class="img-fluid" id="im">
+
+                </div>
+              </div>
+              <div class="col-lg-8 col-md-12 col-12 ps-lg-5 mt-md-5">
+                <div class="about-text">
+                  <h2 style="font-weight: bold; ">Shipmasters Command and Leadership Evaluation<br /> </h2><br>
+                  <p align="left"> This is a 3-day evaluation course to assess Chief Mates' readiness for promotion to
+                    Master. The course includes online quizzes, communication skills analysis, and full mission
+                    simulator exercises covering various scenarios.
+                    <br><br>The quizzes and simulator exercises test participants' understanding of ship handling and
+                    their ability to perform under stressful conditions.
+                    <br><br>An in-house psychologist provides behavioral feedback during the simulator exercises.
+                    <br><br>Each participant receives a comprehensive evaluation report and individual
+                    debriefing.<br><br>The course requires a minimum of 4 and a maximum of 6 participants.
+                  </p>
+
+                  <br><br><br><br><br><br><br>
+                  <!--<a href="#" class="btn btn-warning">Learn More</a>-->
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+      </section>
+    </div>
+  </div>
+  </div><br><br>
+  <!-- about section Ends -->
+  <!-- FOOTER -->
+
+  {%include 'footer.html'%}
+  <!-- Footer End -->
+
+  <script src="static/assets/js/bootstrap.min.js"></script>
+  <script src="static/assets/js/bootstrap.bundle.min.js"></script>
+  <script src="static/assets/js/swiper-bundle.min.js"></script>
+
+
+
+</body>
+
+</html>

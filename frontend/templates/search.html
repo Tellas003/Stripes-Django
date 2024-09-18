@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stripes Academy</title>
+  <LINK REL="SHORTCUT ICON" HREF="static/assets/images/StripesLogo.svg">
+  <meta name="author" content="A Maria Tellas Bsc.,MCA">
+
+  <link rel="stylesheet" href="assets/about-style.css">
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/bootstrap-reboot.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+  <!--Navbar start-->
+
+  {% include 'navbar.html' %}
+
+  <!--navbar end-->
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .di {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+      animation: fadeInDown 1s ease-in-out;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h2 {
+      color: #333;
+    }
+
+    form {
+      margin-top: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: #555;
+      animation: slideInLeft 1s ease-in-out;
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    input {
+      width: 100%;
+      padding: 8px;
+      margin-top: 16px;
+      margin-bottom: 16px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      animation: slideInRight 1s ease-in-out;
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(50%);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    button {
+      background-color: #4caf50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      animation: bounceIn 1s ease-in-out;
+    }
+
+    @keyframes bounceIn {
+      from {
+        opacity: 0;
+        transform: scale(0.5);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    button:hover {
+      background-color: #45a049;
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .error {
+      color: red;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .background-image {
+      background-image: url('static/assets/images/scorpio.jpg');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      height: 100%;
+      position: relative;
+      margin-top: -40px;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 80%);
+    }
+
+    .content {
+      flex: 1;
+      align-item: center;
+      position: sticky;
+      color: #333;
+      text-align: center;
+      font-size: 16px;
+      padding: 1px;
+    }
+
+    #con {
+      top: 400px;
+      background-color: rgba(255, 255, 255, 0);
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+
+    h3 {
+      font-weight: bold;
+      font-size: 14px;
+    }
+
+    @media (max-width: 991px) {
+      .content {
+        margin-left: -150px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .content {
+        font-size: 12px;
+        margin-left: 140px;
+      }
+
+      #con {
+        margin-top: 20px;
+      }
+
+      .col-lg-8 {
+        margin-top: 20px;
+
+        .row {
+          margin-top: 200px;
+        }
+      }
+    }
+
+    @media (max-width: 643px) {
+      .content {
+        margin-left: 100px;
+      }
+    }
+
+    @media (max-width: 586px) {
+      .content {
+        margin-left: 80px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .content {
+        margin-left: 40px;
+      }
+    }
+
+    @media (max-width: 499px) {
+      .content {
+        margin-left: 20px;
+      }
+    }
+
+    @media (max-width: 442px) {
+      .content {
+        margin-left: 10px;
+      }
+    }
+  </style>
+  <!-- about section starts -->
+
+  <div>
+    <div class="background-image">
+      <div class="overlay"></div>
+      <div class="content">
+        <section id="about" class="about section-padding">
+          <div class="container">
+            <div class="row" id="con" style=" margin-top:300px;">
+              <div class="col">
+                <p></p>
+              </div>
+              <div class="col-md-8">
+                <div class="di">
+                  <h3 style="font-weight:bold;">Enter Certificate Number</h3>
+                  <form method="post" action="{% url 'certificate' %}">
+                    {% csrf_token %}
+                    {% if error %}
+                    <p class="error">{{ error }}</p>
+                    {% endif %}
+
+                    <label for="certificateNo" style="opacity: 0;">Certificate Number:</label>
+                    <div style="display: flex; align-items: center;">
+                      <span class="input-group-text" id="certificateStripes" style="opacity: 0;">Stripes</span>
+                      <span class="input-group-text" style="opacity: 0;">/</span>
+                      <select id="certificateCourse" name="certificateCourse" required
+                        style="padding: 8px; border: 1px solid #ccc; border-radius: 4px; background-color: #eee; opacity: 0;">
+                        <option value="Stripes">Select Course</option>
+                        <option value="BTRM">BTRM</option>
+                        <option value="PCCW">PCCW</option>
+                        <option value="SSBT">SSBT</option>
+                        <option value="ES">ES</option>
+                        <option value="SCALE">SCALE</option>
+                        <option value="VERC">VERC</option>
+                        <option value="EEAC">EEAC</option>
+                        <option value="VEEAC">VEEAC</option>
+                        <option value="SMEP">SMEP</option>
+                        <option value="FRAMO">FRAMO</option>
+                        <option value="BWTSNK">BWTSNK</option>
+                        <option value="BWTSSP">BWTSSP</option>
+                        <option value="BWTSHY">BWTSHY</option>
+                        <option value="ME">ME</option>
+
+                        <option value="INST">INST</option>
+                        <option value="VECME">VECME</option>
+                        <option value="SSSHT">SSSHT</option>
+                      </select>
+                      <span class="input-group-text" style="opacity: 0;">/</span>
+                      <input type="text" class="form-control" id="certificateNo" name="certificateNo" required
+                        style="opacity: 0;">
+                    </div>
+                    <div class="mb-3"><br>
+                      <label for="lastName" class="form-label" style="opacity: 0;">Student Last Name:</label>
+                      <input type="text" class="form-control" id="lastName" name="lastName" required
+                        style="opacity: 0;">
+                    </div>
+                    <button type="submit" class="btn btn-success" style="opacity: 0;">Verify</button>
+                  </form>
+                </div>
+
+                <!--<a href="#" class="btn btn-warning">Learn More</a>-->
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+    </section>
+  </div>
+  </div>
+  </div><br><br><br> <br><br><br> <br><br><br><br><br><br>
+  <!-- about section Ends -->
+  <!-- FOOTER -->
+
+
+  {%include 'footer.html'%}
+
+  <!-- Footer End -->
+
+  <script src="assets/js/bootstrap.min.js"></script>
+  <script src="assets/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/swiper-bundle.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      setTimeout(function () {
+        document.querySelectorAll('.di *').forEach(function (el) {
+          el.style.opacity = 1;
+        });
+      }, 500);
+    });
+  </script>
+</body>
+
+</html>
